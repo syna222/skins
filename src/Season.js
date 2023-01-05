@@ -1,17 +1,17 @@
+import Episode from './Episode';
 
-
-export default function Season({number, image_src, air_start, air_end, num_episodes, runtime_mins_approx, season_summary}){
+export default function Season({season_data, episodes_data}){       //{number, image_src, air_start, air_end, num_episodes, runtime_mins_approx, season_summary}
 
 
     return (
-        <div id={"S-" + number}className="season">
-            <img src={image_src} alt={"thumbnail_season" + number} width="300"></img>
-            <span className="season_teaser">SEASON {number}: {season_summary}</span>
-            {/*<span>Season: <strong>{number}</strong></span><br/>
-            <span>First aired: {air_start}</span><br/>
-            <span>Last aired: {air_end}</span><br/>
-            <span>Number of episodes: {num_episodes}</span><br/>
-            <span>Approximated runtime: {runtime_mins_approx} min.</span><br/><br/>*/}
+        <div id={"S-" + season_data.number}className="season">
+            <h1>This is Season {season_data.number}</h1>
+            <img src={season_data.image_src} alt="season-pic" width="300"/>
+            <h2>Episodes:</h2>
+            <div>
+                {episodes_data.map((episode, i) => <Episode key={i} episode={episode}/>)}
+            </div>
+            
         </div>
     );
 }
