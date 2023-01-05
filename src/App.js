@@ -14,17 +14,7 @@ function App() {
         <NavLink to="/">Home</NavLink>
         {seasons.map((season) => <NavLink to={"/season-"+ season.number}>{"Season" + season.number}</NavLink>)}
       </nav>
-      {/*<h1>My Skins Guide</h1>
-      {seasons.map((season) => 
-        <Season 
-        number={season.number}
-        image_src={season.image_src}
-        air_start={season.air_start}
-        air_end={season.air_end}
-        num_episodes={season.num_episodes}
-        runtime_mins_approx={season.runtime_mins_approx}
-        season_summary={season.season_summary}
-      />)}*/}
+      
       <Routes>
         <Route path="/" element={<Home seasons={seasons}/>}/>
         {seasons.map((season, i) => <Route path={"/season-"+ season.number} element={<Season season_data={season} episodes_data={episodesS1}/>}/>)}    {/*episodesS1 muss später verallgemeinert werden + season.number!*/}
