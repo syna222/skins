@@ -11,11 +11,16 @@ import {episodesS6} from './episodeDataS6';
 import {episodesS7} from './episodeDataS7';
 import { NavLink } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const all_episodes_data = [episodesS1, episodesS2, episodesS3, episodesS4, episodesS5, episodesS6, episodesS7];
 console.log("test for all_episodes_data: ", all_episodes_data[0]);
 
 function App() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);    //damit nicht mit alter Scroll-Position auf neue Seite verlinkt (sondern diese ab oben zeigt) FUNKTIONIERT NICHT IMMER?
+  }, []);
 
   return (
     <div className="App">
