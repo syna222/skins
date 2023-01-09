@@ -1,7 +1,7 @@
 import './App.css';
 import Season from './Season';
 import Home from './Home';
-import {seasons} from './seasonData';
+//import {seasons} from './seasonData';
 import {episodesS1} from './episodeDataS1';
 import {episodesS2} from './episodeDataS2';
 import {episodesS3} from './episodeDataS3';
@@ -11,12 +11,35 @@ import {episodesS6} from './episodeDataS6';
 import {episodesS7} from './episodeDataS7';
 import { NavLink } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import useContentful from './useContentful';
 
 const all_episodes_data = [episodesS1, episodesS2, episodesS3, episodesS4, episodesS5, episodesS6, episodesS7];
-console.log("test for all_episodes_data: ", all_episodes_data[0]);
+
 
 function App() {
+    const [ seasonObjs, setSeasonObjs] = useState([]);
+    const { getSeasons } = useContentful();
+
+    //comparator-func for sorting array of seasonObjs below:
+    function compare (a, b){
+        if(a.fields.seasonNum < b.fields.seasonNum){
+            return -1;
+        }
+        if(a.fields.seasonNum > b.fields.seasonNum){
+            return 1;
+        }
+        return 0;
+    }
+
+    useEffect(() => {
+        getSeasons().then((response) => {
+            console.log(response.items);        //items = Array of season-objects
+            //sort state array "seasonObjs" by objects' seasonNums via comparator-func:
+            let seasObjs = response.items;
+            seasObjs.sort( compare );
+            setSeasonObjs(seasObjs)});   
+    }, []);
 
   /*useEffect(() => {
     window.scrollTo(0, 0);    //damit nicht mit alter Scroll-Position auf neue Seite verlinkt (sondern diese ab oben zeigt) FUNKTIONIERT NICHT IMMER?
@@ -26,13 +49,14 @@ function App() {
     <div className="App">
       <nav>
         <NavLink className="nav-elem" to="/">Home</NavLink>
-        {seasons.map((season) => <NavLink className="nav-elem" to={"/season-"+ season.number}>{"Season " + season.number}</NavLink>)}
+        {seasonObjs.map((seasonObj, i) => <NavLink key={i} className="nav-elem" to={"/season-"+ seasonObj.fields.seasonNum}>{"Season " + seasonObj.fields.seasonNum}</NavLink>)}
       </nav>
       
       <Routes>
-        <Route path="/" element={<Home seasons={seasons}/>}/>
-        {seasons.map((season, i) => <Route path={"/season-"+ season.number} element={<Season season_data={season} episodes_data={all_episodes_data[i]}/>}/>)}    {/*episodesS1 muss später verallgemeinert werden!*/}
+        <Route path="/" element={<Home seasonObjs={seasonObjs}/>}/>
+        {seasonObjs.map((seasonObj, i) => <Route key={i}path={"/season-"+ seasonObj.fields.seasonNum} element={<Season seasonObj={seasonObj} episodes_data={all_episodes_data[i]}/>}/>)}    {/*episodesS1 muss später verallgemeinert werden!*/}
       </Routes>
+
 
     </div>
   );
