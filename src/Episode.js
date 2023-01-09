@@ -6,11 +6,11 @@ export default function Episode({episode}){
     return (
         <>
             <div className="episode">
-                <p>Episode number: <strong>{episode.number}</strong></p>
-                <p>Season: <strong>{episode.season}</strong></p>
-                <p>Title: <strong>"{episode.title}"</strong></p>
-                <p>First aired: <strong>{episode.air_date}</strong></p>
-                <p>Summary: {episode.summary}</p>
+                <p><strong>Episode: <span className="coloured">{episode.number}</span></strong></p>
+                <p><strong>Season: <span className="coloured">{episode.season}</span></strong></p>
+                <p><strong>Title: <span className="coloured">"{episode.title}"</span></strong></p>
+                <p><strong>First aired: <span className="coloured">{episode.air_date}</span></strong></p>
+                <p className="ep-summary"><strong>Summary: </strong>{episode.summary}</p>
             </div>
             <br/>
         </>

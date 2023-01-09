@@ -18,15 +18,15 @@ console.log("test for all_episodes_data: ", all_episodes_data[0]);
 
 function App() {
 
-  useEffect(() => {
+  /*useEffect(() => {
     window.scrollTo(0, 0);    //damit nicht mit alter Scroll-Position auf neue Seite verlinkt (sondern diese ab oben zeigt) FUNKTIONIERT NICHT IMMER?
-  }, []);
+  }, []);*/
 
   return (
     <div className="App">
       <nav>
-        <NavLink to="/">Home</NavLink>
-        {seasons.map((season) => <NavLink to={"/season-"+ season.number}>{"Season" + season.number}</NavLink>)}
+        <NavLink className="nav-elem" to="/">Home</NavLink>
+        {seasons.map((season) => <NavLink className="nav-elem" to={"/season-"+ season.number}>{"Season " + season.number}</NavLink>)}
       </nav>
       
       <Routes>
