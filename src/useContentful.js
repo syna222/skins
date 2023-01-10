@@ -4,8 +4,8 @@ import { createClient } from 'contentful';
 export default function useContentful(){
 
     const client = createClient({
-        space: "9py7flakzbxq",
-        accessToken: "pV5iXkKvU0r4nsWiLxF3rsfhRuGKBIK6IB8DtxVNbEk",     //hide in .env! never upload!
+        space: process.env.REACT_APP_SPACE_ID,
+        accessToken: process.env.REACT_APP_ACCESS_TOKEN,
         host: "cdn.contentful.com"
         });
 
