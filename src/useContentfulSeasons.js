@@ -1,7 +1,6 @@
 import { createClient } from 'contentful';
 
-
-export default function useContentful(){
+export default function useContentfulSeasons(){
 
     const client = createClient({
         space: process.env.REACT_APP_SPACE_ID,
@@ -18,7 +17,7 @@ export default function useContentful(){
         }
     }
 
-    //console.log("test aus useContentful(): ", getSeasons());
+    //console.log("test aus useContentfulSeasons(): ", getSeasons());
     
     return { getSeasons };
 

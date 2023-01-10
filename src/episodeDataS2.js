@@ -43,7 +43,7 @@ export const episodesS2 = [
     {number: "3",
     season: "2",
     title: "Sid", 
-    air_date: "25-08-2008",
+    air_date: "25-02-2008",
     summary: "Sid is in despair. Tony is a shadow of his former self and Cassie has settled down in Scotland. Sid and his father, Mark, are visited by Mark's father, brother, and nephews, who constantly belittle Mark and Sid. Mark persuades Sid’s mother to move back home for a day and pretend as though they were not separated. Sid breaks up with Cassie over a misunderstanding. Mark finally takes a stand against his father and brother and orders them to leave. He regrets being cruel to Sid, realizing that's how his father always treated him. He dies of an apparent heart attack that night and Sid discovers his body the next morning. Sid can't come to terms with it and leaves him where he's sitting, telling no one. Tony approaches him, saying people told him they were best friends. They attend a Crystal Castles gig where Sid opens up to Tony about his problems. Tony and Sid go back to Sid's house where Mark's body is still in the chair. Sid asks if this (his father's death and his breakup) is real. Sid calls his mother, then he boards a train.",
     characters_actors: [
         {character:"Tony Stonem", actor: "Nicholas Hoult"}, 

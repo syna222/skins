@@ -6,8 +6,8 @@ export default function Home({seasonObjs}){
         <>
             <h1>My Skins Guide</h1>
             {seasonObjs.map((seasonObj, i) => 
-                <Link to={`/season-${seasonObj.fields.seasonNum}`}>
-                    <div key={i} className="season-teaser">
+                <Link key={i} to={`/season-${seasonObj.fields.seasonNum}`}>
+                    <div className="season-teaser">
                         <h2>{seasonObj.fields.entryName}</h2>
                         <img src={seasonObj.fields.seasonImg.fields.file.url} alt={`season-${seasonObj.fields.seasonNum}`} width="200"/>
                     </div>
