@@ -69,7 +69,6 @@ function App() {
     window.scrollTo(0, 0);    //damit nicht mit alter Scroll-Position auf neue Seite verlinkt (sondern diese ab oben zeigt) FUNKTIONIERT NICHT IMMER?
   }, []);*/
 
-  
   console.log("test, seasons sorted sind: ", seasonObjs);
   console.log("test, episoden sorted sind: ", episodeObjs);
 
