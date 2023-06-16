@@ -1,3 +1,5 @@
+Hosted on: https://skins-seasonguide.onrender.com/ (Backend created on "Contentful", a content managing platform)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
