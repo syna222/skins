@@ -1,4 +1,5 @@
-Hosted on: https://skins-seasonguide.onrender.com/  (Backend created with Contentful, a content managing platform)
+Hosted on: https://skins-seasonguide.onrender.com/ (Backend created with "Contentful", a content managing platform)
+
 
 # Getting Started with Create React App
 
