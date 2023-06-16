@@ -16,9 +16,6 @@ export default function useContentfulEpisodes(){
             console.log("Error fetching episodes: ", error);
         }
     }
-
-    //console.log("test aus useContentfulEpisodes(): ", getEpisodes());
     
     return { getEpisodes };
-
 }

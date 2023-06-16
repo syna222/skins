@@ -16,11 +16,8 @@ export default function useContentfulSeasons(){
             console.log("Error fetching seasons: ", error);
         }
     }
-
-    //console.log("test aus useContentfulSeasons(): ", getSeasons());
     
     return { getSeasons };
-
 }
 
 

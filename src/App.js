@@ -1,22 +1,11 @@
 import './App.css';
 import Season from './Season';
 import Home from './Home';
-//import {seasons} from './seasonData';
-//import {episodesS1} from './episodeDataS1';
-//import {episodesS2} from './episodeDataS2';
-//import {episodesS3} from './episodeDataS3';
-//import {episodesS4} from './episodeDataS4';
-//import {episodesS5} from './episodeDataS5';
-//import {episodesS6} from './episodeDataS6';
-//import {episodesS7} from './episodeDataS7';
 import { NavLink } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useContentfulSeasons from './useContentfulSeasons';
 import useContentfulEpisodes from './useContenfulEpisodes';
-
-//const all_episodes_data = [episodesS1, episodesS2, episodesS3, episodesS4, episodesS5, episodesS6, episodesS7];
-
 
 function App() {
     const { getSeasons } = useContentfulSeasons();
@@ -78,13 +67,10 @@ function App() {
         <NavLink className="nav-elem" to="/">Home</NavLink>
         {seasonObjs.map((seasonObj, i) => <NavLink key={i} className="nav-elem" to={"/season-"+ seasonObj.fields.seasonNum}>{"Season " + seasonObj.fields.seasonNum}</NavLink>)}
       </nav>
-      
       <Routes>
         <Route path="/" element={<Home seasonObjs={seasonObjs}/>}/>
         {seasonObjs.map((seasonObj, i) => <Route key={i}path={"/season-"+ seasonObj.fields.seasonNum} element={<Season seasonObj={seasonObj} episodeObjs={episodeObjs}/>}/>)}  {/*jeder Season werden alle Episoden übergeben; diese sucht sich die ihr zugehörigen selbst raus.*/}
       </Routes>
-
-
     </div>
   );
 }

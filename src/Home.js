@@ -13,15 +13,6 @@ export default function Home({seasonObjs}){
                     </div>
                 </Link>
             )}
-
-            {/*seasons.map((season, i) => 
-                <Link to={`/season-${season.number}`}>        {/*via useParams?}
-                    <div key={i} className="season-teaser" style={{border: "2px solid black"}}>   
-                        <h2>Season {season.number}</h2>
-                        <img src={season.image_src} alt={"season-" + season.number} width="200"/> 
-                    </div>
-                </Link>
-            )*/}
         </>
     );
 }
